@@ -4,6 +4,7 @@ import guru.springframework.msscssm.domain.Payment;
 import guru.springframework.msscssm.domain.PaymentEvent;
 import guru.springframework.msscssm.domain.PaymentState;
 import guru.springframework.msscssm.repository.PaymentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.Message;
 import org.springframework.statemachine.StateMachine;
 import org.springframework.statemachine.state.State;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @Component
 public class PaymentStateChangeInterceptor extends StateMachineInterceptorAdapter<PaymentState, PaymentEvent> {
 
+    @Autowired
     private PaymentRepository paymentRepository;
 
     @Override
